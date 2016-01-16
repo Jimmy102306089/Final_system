@@ -1,0 +1,36 @@
+<h2>更新存貨 </h2>
+<%= form_for @inventory do |f|%>
+
+<div>
+編號
+<%=f.text_field :number %>
+</div>
+
+
+<div>
+產品名稱
+<%=f.text_field :name %>
+</div>
+
+<div>
+地點
+<%=f.text_field :location %>
+</div>
+
+
+
+<div>
+平均每日銷售數量
+<%=f.text_field :sales %>
+</div>
+
+
+<div>
+剩餘庫存數量
+<%=f.text_field :stock %>
+</div>
+
+
+<%=f.submit%>
+
+<% end -%>

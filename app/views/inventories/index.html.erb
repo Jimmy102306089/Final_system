@@ -1,0 +1,18 @@
+<h1 style="text-align:center">存貨管理系統</h1>
+
+<%=form_tag inventories_path,method:"get" do%>
+<h2 style="text-align:center" >
+商品編號<%=text_field_tag :number%>
+分店<%=text_field_tag :location%>
+<%=submit_tag "搜尋"%>
+</h2>
+<% end -%>
+
+<% @inventories.each do|inventory|%>
+<h2 style="text-align:center">
+<%= link_to inventory.number, inventory_path(inventory) %>
+<%= link_to "更新存貨", edit_inventory_path(inventory) %>
+<%= link_to "刪除存貨", inventory_path(inventory) %>
+</h2>
+<% end %>
+

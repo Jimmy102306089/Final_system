@@ -1,0 +1,33 @@
+<h2>更新存貨 </h2>
+<%= form_for @marketing do |f|%>
+
+<div>
+編號
+<%=f.text_field :number %>
+</div>
+
+<div>
+名稱
+<%=f.text_field :name %>
+</div>
+
+<div>
+時間區間
+<%=f.text_field :time%>
+</div>
+
+<div>
+銷售量
+<%=f.text_field :sales %>
+</div>
+
+
+<div>
+過去12個月平均銷售輛
+<%=f.text_field :avr_number %>
+</div>
+
+
+<%=f.submit%>
+
+<% end -%>

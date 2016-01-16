@@ -1,0 +1,23 @@
+<h2 style="text-align:center">檢視存貨</h2>
+
+<h2 style="text-align:center">存貨編號： <%= @inventory.number%> </h2>
+
+<h2 style="text-align:center">貨品名稱： <%= @inventory.name%> </h2>
+
+<h2 style="text-align:center">門市： <%= @inventory.location%></h2>
+
+
+<h2 style="text-align:center">每日平均銷售數量： <%= @inventory.sales%></h2>
+
+<h2 style="text-align:center">剩餘庫存： <%= @inventory.stock%></h2>
+
+<h2 style="text-align:center">進貨建議：
+<% if @inventory.stock / @inventory.sales < 6 ; @inventory.stock / @inventory.sales > 5%>
+    明天需要申請補貨！
+<% elsif @inventory.stock / @inventory.sales < 5 %>
+   需要馬上申請補貨！
+ <%else%>
+    離需要申請補貨時間 尚有兩天以上
+<%end%>
+
+</h2>

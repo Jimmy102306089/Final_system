@@ -1,0 +1,18 @@
+<h1 style="text-align:center">顧客管理系統</h1>
+
+<%=form_tag customers_path,method:"get" do%>
+<h2 style="text-align:center">
+顧客編號<%=text_field_tag :number%>
+<%=submit_tag "搜尋"%>
+</h2>
+<% end -%>
+<h2 style="text-align:center">  <%= link_to "新增顧客資訊", new_customer_path %>
+</h2>
+
+<% @customers.each do|customer|%>
+<h2 style="text-align:center">
+<%= link_to  customer.number, customer_path(customer) %>
+<%= link_to  "更新顧客資訊", edit_customer_path(customer) %>
+<%= link_to  "刪除顧客資訊", customer_path(customer) %>
+</h2>
+<% end %>

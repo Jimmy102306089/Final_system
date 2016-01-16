@@ -1,0 +1,20 @@
+<h2 style="text-align:center">檢視存貨</h2>
+
+<h2 style="text-align:center">產品編號： <%= @marketing.number%> </h2>
+
+<h2 style="text-align:center">產品名稱： <%= @marketing.name%></h2>
+
+<h2 style="text-align:center">時間區間： <%= @marketing.time%></h2>
+
+<h2 style="text-align:center">銷售量： <%= @marketing.sales%></h2>
+
+<h2 style="text-align:center">過去12個月平均銷售量： <%= @marketing.avr_number%></h2>
+
+<h2 style="text-align:center"> 行銷建議： <%= @marketing.suggestion%></h2>
+<h2 style="text-align:center">
+<%if @marketing.avr_number - @marketing.sales > 0 %>
+買一送一刺激買氣
+<%else%>
+在各大廣告平台進行進一步推廣
+<%end%>
+</h2>

@@ -1,0 +1,18 @@
+<h2 style="text-align:center">行銷資訊系統</h2>
+
+<%=form_tag marketings_path,method:"get" do%>
+<h2 style="text-align:center">
+商品編號<%=text_field_tag :number%>
+<%=submit_tag "搜尋"%>
+</h2>
+<% end -%>
+<h2 style="text-align:center ">
+<%= link_to "新增存貨", new_marketing_path %>
+</h2>
+<% @marketings.each do|marketing|%>
+<h2 style="text-align:center">
+<%= link_to marketing.number, marketing_path(marketing) %>
+<%= link_to "更新存貨", edit_marketing_path(marketing) %>
+<%= link_to "刪除存貨", marketing_path(marketing) %>
+</h2>
+<% end %>
